@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
 import "../styles/pages/Home.css"
@@ -13,6 +13,10 @@ const Home = () => {
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
 
+  //estado para la busqueda
+  const [searchValue, setSearchValue] = useState("")
+  const inputRef = useRef(null)
+
   // simulando existencia del usuario, proximamente este estado será global
   const { user } = useAuth()
 
@@ -22,7 +26,6 @@ const Home = () => {
     setProducts(data)
   }
 
-  // El array vacío (dependencias) espera a que ejecute el return del jsx. Si tiene algo, useEffect se va a ejecutar cada vez que se modifique lo que este dentro de la dependencia.
   useEffect(() => {
     fetchingProducts()
   }, [])
@@ -32,7 +35,6 @@ const Home = () => {
 
     if (response.ok) {
       setProducts(prevProduct => prevProduct.filter((product) => product.id != id))
-      // fetchingProducts()
     }
   }
 
@@ -76,13 +78,13 @@ const Home = () => {
               ? data
               : product
           ))
-        // fetchingProducts()
       }
       setShowPopup(false)
     } catch (error) {
       console.log(error)
     }
   }
+  
 
   return (
     <Layout>
@@ -108,14 +110,22 @@ const Home = () => {
       <p>Estamos disponibles para ayudarte en todo momento.</p>
     </div>
   </div>
-
-</section>
-
+      </section>
 
       <section>
         <h2>Nuestros productos</h2>
         <p>Elegí entre nuestras categorías más populares.</p>
 
+        <div className="search-container">
+          <h3>🔍 Buscar producto</h3>
+          <input
+            ref={inputRef}
+            type="search"
+            value={searchValue}
+            placeholder="Buscar por nombre..."
+            onChange={(e) => setSearchValue(e.target.value)}
+          />
+        </div>
 
         {
           showPopup && <section className="popup-edit">
@@ -158,9 +168,13 @@ const Home = () => {
 
         <div className="products-container">
           {
-            products.map((product) => <div key={product.id}>
-              <h2 key={product.id}>{product.title}</h2>
+            products
+              .filter(product =>
+                product.title.toLowerCase().includes(searchValue.toLowerCase())
+                        )
+            .map((product) => <div key={product.id}>
               <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
+              <h2 key={product.id}>{product.title}</h2>
               <p className="price">${product.price}</p>
               <p className="description">{product.description}</p>
               <p className="category"><strong>{product.category}</strong></p>

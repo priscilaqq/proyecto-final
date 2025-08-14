@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom"
 const Login = () => {
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [error, setError] = useState("")
+  const [success, setSuccess] = useState("")
   const { login } = useAuth()
 
   const nagivate = useNavigate()
@@ -21,12 +23,17 @@ const Login = () => {
       setPassword("")
       nagivate("/")
     }
+
+    if (!username || !password) {
+      setError("Debes completar todos los campos")
+      return
+    }
   }
+  
 
   return (
     <Layout>
       <h1>Inicia sesión</h1>
-
       <section>
         <h2>Hola, bienvenido de nuevo</h2>
         <p>johnd, m38rmF$</p>
@@ -47,6 +54,12 @@ const Login = () => {
           </div>
           <button>Ingresar</button>
         </form>
+        {
+          error && <p style={{ color: "red" }}>{error}</p>
+        }
+        {
+          success && <p style={{ color: "green" }}>{success}</p>
+        }
       </section>
     </Layout>
   )

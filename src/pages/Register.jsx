@@ -13,10 +13,48 @@ const Register = () => {
     setError("")
     setSuccess("")
 
+    const dominiosValidos = ["gmail.com", "hotmail.com", "yahoo.com", "outlook.com"];
+
     if (!username || !email || !password) {
       setError("Debes completar todos los campos")
       return
     }
+    //-------------validacion de user--------------
+    
+    if (username.length < 5) {
+      setError("El nombre de usuario debe conter 5 caracteres")
+      return
+    }
+    
+    //-------------validacion de email--------------
+    
+    if (!email.includes("@") || !email.includes(".")) {
+      setError("El email debe contener '@' y '.'")
+    }
+
+    const arrobaIndex = email.indexOf("@");
+    const dominio = email.substring(arrobaIndex + 1) // todo lo que está después del "@"
+
+    if (!dominiosValidos.includes(dominio)) {
+      setError("Dominio inválido o mal escrito (ej: gmail.com, hotmail.com)")
+      return
+    }
+
+//-------------validacion de password--------------
+
+    if (password.length < 8) {
+      setError("La contraseña debe tener 8 caracteres")
+      return
+    }
+
+    const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[\W_])/;
+
+    if (!valid.test(password)) {
+      setError(
+        "La contraseña debe contener al menos 1 mayúscula, minúscula, número y símbolo")
+      return
+    }
+  
 
     const newUser = {
       username,

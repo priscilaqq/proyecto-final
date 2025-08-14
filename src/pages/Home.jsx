@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
+import "../styles/pages/Home.css"
 
 const Home = () => {
   const [products, setProducts] = useState([])
@@ -152,14 +153,14 @@ const Home = () => {
           </section>
         }
 
-        <div>
+        <div className="products-container">
           {
             products.map((product) => <div key={product.id}>
               <h2 key={product.id}>{product.title}</h2>
               <img width="80px" src={product.image} alt={`Imagen de ${product.title}`} />
-              <p>${product.price}</p>
-              <p>{product.description}</p>
-              <p><strong>{product.category}</strong></p>
+              <p className="price">${product.price}</p>
+              <p className="description">{product.description}</p>
+              <p className="category"><strong>{product.category}</strong></p>
               {
                 user && <div>
                   <button onClick={() => handleOpenEdit(product)}>Actualizar</button>

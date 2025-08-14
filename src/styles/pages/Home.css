@@ -1,0 +1,220 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Secciones generales */
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Títulos */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #34495e;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+/* Párrafos */
+p {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Listas */
+ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 15px;
+}
+
+/* Contenedor de productos con Grid */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas de productos */
+.products-container > div {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fafafa;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.products-container > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.products-container img {
+  display: block;
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Botones */
+button {
+  padding: 8px 15px;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+/* Popup de edición */
+.popup-edit {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  z-index: 1000;
+  width: 90%;
+  max-width: 500px;
+}
+
+.popup-edit input,
+.popup-edit textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.popup-edit button {
+  width: 100%;
+  background-color: #27ae60;
+}
+
+.popup-edit button:hover {
+  background-color: #1e8449;
+}
+
+/* Contenedor de productos con Grid */
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas de productos */
+.products-container > div {
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.products-container > div:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Imagen */
+.products-container img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+/* Título del producto */
+.products-container h2 {
+  font-size: 1rem;
+  color: #111;
+  margin-bottom: 5px;
+}
+
+/* Precio en azul destacado */
+.products-container p.price {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #2962ff; /* azul similar al de la imagen */
+  margin-bottom: 5px;
+}
+
+/* Descripción */
+.products-container p.description {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+/* Categoría en naranja */
+.products-container p.category {
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #ff9800; /* naranja */
+  text-transform: uppercase;
+  margin-top: auto;
+}
+
+/* Botones (si hay) */
+.products-container button {
+  padding: 6px 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.products-container button:hover {
+  background-color: #2980b9;
+}

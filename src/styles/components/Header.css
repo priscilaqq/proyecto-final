@@ -1,72 +1,42 @@
-/* ====== HEADER ====== */
-header {
-  background: linear-gradient(to right, #1e3c72, #2a5298); /* Degradado azul */
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 30px;
+/* ===== NAVBAR FIJA ===== */
+.navbar {
+  position: fixed;      /* Fijo siempre en la parte superior */
+  top: 0;               /* Pegado arriba */
+  left: 0;
+  width: 100%;          /* Ocupa todo el ancho */
+  z-index: 1000;        /* Encima de todo */
+  background: linear-gradient(to right, #1e3c72, #2a5298); /* Degradado lindo */
+  padding: 12px 20px;
 }
 
-/* Logo / Nombre de la tienda */
-header img {
-  height: 50px;
-  width: auto;
-}
-
-header h1 {
+/* Links dentro del nav */
+.navbar a {
   color: white;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 0;
-}
-
-/* ====== NAV ====== */
-nav ul {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  gap: 25px;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li a {
   text-decoration: none;
-  color: white;
-  font-size: 15px;
+  margin: 0 15px;
   font-weight: 500;
   transition: color 0.3s ease;
 }
 
-nav ul li a:hover {
-  color: #ffd166; /* Amarillo suave al pasar el mouse */
+.navbar a:hover {
+  color: #ffcc00; /* Color dorado al pasar el mouse */
 }
 
-/* Botón "Registrarse" */
-nav .registro-btn {
-  background-color: #ff9f1c;
-  padding: 8px 16px;
-  border-radius: 6px;
-  color: white;
+/* Botón cerrar sesión */
+.navbar button {
+  background-color: #ffcc00;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 5px;
+  cursor: pointer;
   font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
 }
 
-nav .registro-btn:hover {
-  background-color: #e68a00;
+.navbar button:hover {
+  background-color: #ffaa00;
 }
 
-/* ====== RESPONSIVE ====== */
-@media (max-width: 768px) {
-  header {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-  }
+/* Para que el contenido no se esconda detrás del nav fijo */
+body {
+  padding-top: 70px; /* Ajusta según el alto del nav */
 }

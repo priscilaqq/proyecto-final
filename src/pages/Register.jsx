@@ -51,7 +51,7 @@ const Register = () => {
 
     if (!valid.test(password)) {
       setError(
-        "La contraseña debe contener al menos 1 mayúscula, minúscula, número y símbolo")
+        "La contraseña debe contener al menos 1 mayúscula, minúscula, número y símbolo");
       return
     }
   

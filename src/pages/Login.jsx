@@ -25,7 +25,7 @@ const Login = () => {
     }
 
     if (!username || !password) {
-      setError("Debes completar todos los campos")
+      setError("Debes completar todos los campos");
       return
     }
   }

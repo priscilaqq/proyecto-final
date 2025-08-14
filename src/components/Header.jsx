@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useAuth } from "../context/UserContext"
+import "../styles/components/Header.css"
 
 const Header = () => {
   const { user, logout } = useAuth()
@@ -9,27 +10,35 @@ const Header = () => {
   }
 
   return (
-    <header style={{ backgroundColor: "lightblue" }}>
-      <img src="https://upload.wikimedia.org/wikipedia/commons/8/85/Logo-Test.png" alt="imagen de logo" />
-      <nav>
-        <ul>
-          {/* Cambiar elementos a por componentes Link de react-router-dom */}
-          {
+    <>
+      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        nav
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+            {
             user && <>
               <li><Link to="/">Inicio</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
               <button onClick={handleLogout}>Cerrar sesión</button>
             </>
-          }
-          {
+              }
+                  {
             !user && <>
               <li><Link to="/login">Login</Link></li>
-              <li><Link to="/registrate">Registrate</Link></li>
+              <li><Link to="/registrate" className="registro-btn">Registrate</Link></li>
             </>
           }
-        </ul>
-      </nav>
-    </header>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+      </>
   )
 }
 

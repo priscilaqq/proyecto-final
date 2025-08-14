@@ -19,6 +19,7 @@ const Header = () => {
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
+            <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
             {
             user && <>
               <li><Link to="/">Inicio</Link></li>

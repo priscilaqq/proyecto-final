@@ -13,11 +13,9 @@ const Home = () => {
   const [categoryEdit, setCategoryEdit] = useState("")
   const [imageEdit, setImageEdit] = useState("")
 
-  //estado para la busqueda
   const [searchValue, setSearchValue] = useState("")
   const inputRef = useRef(null)
 
-  // simulando existencia del usuario, proximamente este estado será global
   const { user } = useAuth()
 
   const fetchingProducts = async () => {
@@ -48,7 +46,7 @@ const Home = () => {
     setImageEdit(product.image)
   }
 
-  // petición al backend mediante fetch para modificar-> método PATCH / PUT https://fakeproductapi.com/products
+  
   const handleUpdate = async (e) => {
     e.preventDefault()
 

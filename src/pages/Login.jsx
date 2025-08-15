@@ -2,7 +2,8 @@
 import { useState } from "react"
 import { Layout } from "../components/Layout"
 import { useAuth } from "../context/UserContext"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
+import "../styles/pages/Login.css"
 
 const Login = () => {
   const [username, setUsername] = useState("")
@@ -34,14 +35,16 @@ const Login = () => {
   return (
     <Layout>
       <h1>Inicia sesión</h1>
-      <section>
+      <section className="login-section">
         <h2>Hola, bienvenido de nuevo</h2>
-        <p>johnd, m38rmF$</p>
+        <p><strong>Usario</strong>: johnd</p>
+        <p><strong>Contraseña</strong>: m38rmF$</p>
         <form onSubmit={handleLogin}>
           <div>
             <label>Nombre de usuario:</label>
             <input
               type="text"
+              placeholder="Ingrese usuario"
               onChange={(e) => setUsername(e.target.value)}
               value={username} />
           </div>
@@ -49,6 +52,7 @@ const Login = () => {
             <label>Contraseña:</label>
             <input
               type="password"
+              placeholder="Ingrese contraseña"
               onChange={(e) => setPassword(e.target.value)}
               value={password} />
           </div>
@@ -60,6 +64,8 @@ const Login = () => {
         {
           success && <p style={{ color: "green" }}>{success}</p>
         }
+              <p class="register-text">¿No tenés una cuenta? <Link to="/registrate">Regístrate</Link></p>
+
       </section>
     </Layout>
   )

@@ -1,9 +1,10 @@
 import { Layout } from "../components/Layout"
+import "../styles/pages/SobreNosotros.css"
 
 const SobreNosotros = () => {
   return (
     <Layout>
-      <section>
+      <section className="sn-s1">
         <h1>Nuestro Proyecto</h1>
         <p>Este es un desarrollo de e-commerce creado como parte de un curso de React. Consiste en una tienda en línea completa que reproduce una experiencia de compra real, con funciones de autenticación, administración de productos y navegación sencilla.</p>
         <p>El proyecto aplica buenas prácticas de desarrollo frontend, incluyendo manejo de estado, enrutamiento, validación de formularios y diseño adaptable a distintos dispositivos.</p>

@@ -19,16 +19,17 @@ const Header = () => {
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-            <li><Link to="/sobre-nosotros">Sobre Nosotros</Link></li>
-            {
-            user && <>
               <li><Link to="/">Inicio</Link></li>
+            {
+                user && <>
+              <li><Link to="/sobrenosotros">Sobre Nosotros</Link></li>
               <li><Link to="/dashboard">Dashboard</Link></li>
-              <button onClick={handleLogout}>Cerrar sesión</button>
+              <button className="cerrarsesion" onClick={handleLogout}>Cerrar sesión</button>
             </>
               }
                   {
-            !user && <>
+                !user && <>
+              <li><Link to="/sobrenosotros">Sobre Nosotros</Link></li>
               <li><Link to="/login">Login</Link></li>
               <li><Link to="/registrate" className="registro-btn">Registrate</Link></li>
             </>

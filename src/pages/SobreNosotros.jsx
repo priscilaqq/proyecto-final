@@ -25,3 +25,5 @@ const SobreNosotros = () => {
     </Layout>
   )
 }
+
+export{SobreNosotros}

@@ -64,7 +64,7 @@ const Login = () => {
         {
           success && <p style={{ color: "green" }}>{success}</p>
         }
-              <p class="register-text">¿No tenés una cuenta? <Link to="/registrate">Regístrate</Link></p>
+              <p class="register-text">¿No tenés una cuenta? <Link to="/registra">Regístrate</Link></p>
 
       </section>
     </Layout>

@@ -1,0 +1,66 @@
+
+/* Títulos */
+.title {
+  text-align: center;
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  text-align: center;
+  color: #444;
+  margin-bottom: 1.5rem;
+}
+
+/* Contenedor del formulario */
+.form-container {
+  margin-top: 100px;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+/* Formulario */
+.register-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: bold;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.form-input:focus {
+  border-color: #2575fc;
+}
+
+/* Botón */
+.form-button {
+  width: 100%;
+  padding: 0.7rem;
+  background: #8d0101;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.form-button:hover {
+  background: #840202a4;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { Layout } from "../components/Layout"
+import "../styles/pages/Register.css"
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -72,36 +73,37 @@ const Register = () => {
 
   return (
     <Layout>
-      <h1>Registrate</h1>
-
-      <section>
-        <h2>Hola, bienvenido</h2>
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label>Username:</label>
+      <section className="form-container">
+        <h2 className="subtitle">Hola, bienvenido</h2>
+        <form className="register-form" onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label  className="form-label">Username:</label>
             <input
               type="text"
+              placeholder="Ingrese usuario"
               onChange={(e) => setUsername(e.target.value)}
               value={username}
             />
           </div>
-          <div>
-            <label>Correo electrónico:</label>
+          <div className="form-group">
+            <label className="form-label">Correo electrónico:</label>
             <input
               type="email"
+              placeholder="Ingrese email"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
           </div>
-          <div>
-            <label>Contraseña:</label>
+          <div className="form-group">
+            <label className="form-label">Contraseña:</label>
             <input
               type="password"
+              placeholder="Ingrese contraseña"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
           </div>
-          <button>Ingresar</button>
+          <button className="form-button">Ingresar</button>
         </form>
 
         {
